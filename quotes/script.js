@@ -7,18 +7,18 @@ const loader = document.getElementById('loader');
 
 let apiQuotes = [];
 
-const loading = () => {
+const showLoader = () => {
     loader.hidden = false;
     quoteContainer.hidden = true;
 }
 
-const complete = () => {
+const hideLoader = () => {
     quoteContainer.hidden = false;
     loader.hidden = true;
 }
 
 const newQuote = () => {
-    loading();
+    showLoader();
     const rand = Math.floor(Math.random() * apiQuotes.length);
     const quote = apiQuotes[rand];
     localStorage.setItem('currentQuote', JSON.stringify(quote));
@@ -26,11 +26,11 @@ const newQuote = () => {
         authorText.textContent = quote.author;
     }
     quoteText.textContent = quote.text;
-    complete();
+    hideLoader();
 }
 
 const updateQuotes = async () => {
-    loading();
+    showLoader();
     const apiUrl = 'https://type.fit/api/quotes';
     try {
         const response = await fetch(apiUrl);
@@ -41,17 +41,13 @@ const updateQuotes = async () => {
 }
 
 const getQuotes = async () => {
-    loading();
-    try {
-        await updateQuotes();
-        newQuote();
-    } catch (error) {
-        alert('Error fetching quotes!');
-    }
+    showLoader();
+    await updateQuotes();
+    newQuote();
 }
 
 const checkSavedQuote = () => {
-    loading();
+    showLoader();
     if (!localStorage.getItem('currentQuote')) {
         return getQuotes();
     }
@@ -62,7 +58,7 @@ const checkSavedQuote = () => {
             authorText.textContent = currentQuote.author;
         }
         quoteText.textContent = currentQuote.text;
-        complete();
+        hideLoader();
     } catch (err) {
         getQuotes();
     }
