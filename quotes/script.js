@@ -67,7 +67,8 @@ const checkSavedQuote = () => {
 const tweetQuote = () => {
     const text = quoteText.textContent;
     const author = authorText.textContent;
-    const twitterUrl = `https://twitter.com/intent/tweet?text=${text} - ${author}`;
+    const tweet = (!author) ? text : `${text} - ${author}`;
+    const twitterUrl = `https://twitter.com/intent/tweet?text=${tweet}`;
     window.open(twitterUrl, '_blank');
 }
 
