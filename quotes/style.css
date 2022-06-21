@@ -1,0 +1,100 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans', sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f8fafb;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='112' height='92' viewBox='0 0 112 92'%3E%3Cg fill='%23000000' fill-opacity='0.04'%3E%3Cpath fill-rule='evenodd' d='M72 10H40L16 20H0v8h16l24-14h32l24 14h16v-8H96L72 10zm0-8H40L16 4H0v8h16l24-6h32l24 6h16V4H96L72 2zm0 84H40l-24-6H0v8h16l24 2h32l24-2h16v-8H96l-24 6zm0-8H40L16 64H0v8h16l24 10h32l24-10h16v-8H96L72 78zm0-12H40L16 56H0v4h16l24 14h32l24-14h16v-4H96L72 66zm0-16H40l-24-2H0v4h16l24 6h32l24-6h16v-4H96l-24 2zm0-16H40l-24 6H0v4h16l24-2h32l24 2h16v-4H96l-24-6zm0-16H40L16 32H0v4h16l24-10h32l24 10h16v-4H96L72 18z'/%3E%3C/g%3E%3C/svg%3E");
+    min-height: 100vh;
+    color: #000;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.quote-container {
+    width: auto;
+    max-width: 900px;
+    margin: 2em;
+    padding: 1.5em 2em;
+    border-radius: .75em;
+    background-color: rgba(255, 255, 255, 0.7);
+    box-shadow: 0px .5em 1em rgba(0, 0, 0, 0.4);
+}
+
+.quote-text {
+    font-weight: 100;
+    font-size: 1.75rem;
+    text-align: left;
+}
+
+.fa-quote-left {
+    font-size: 2.5rem;
+    opacity: .5;
+    margin-right: .25em;
+}
+
+.quote-author {
+    margin-top: 1em;
+    font-size: 1.5rem;
+    font-style: italic;
+    text-align: right;
+}
+
+.button-container {
+    display: flex;
+    justify-content: space-between;
+    margin: 0em -1em;
+    margin-top: 1em;
+    padding-top: 1em;
+    border-top: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+button {
+    margin: 0 1em;
+    cursor: pointer;
+    font-size: 1.2em;
+    border: none;
+    color: #fff;
+    background-color: #333;
+    padding: 0.5rem 1.8rem;
+    border-radius: .5rem;
+    box-shadow: 0 0.3rem rgba(121, 121, 121, 0.65);
+}
+
+button:hover {
+    filter: brightness(110%);
+}
+
+button:active {
+    transform: translate(0, 0.3rem);
+    box-shadow: 0 0.1rem rgba(121, 121, 121, 0.65);
+}
+
+.twitter-button:hover {
+    color: #38a1f3;
+}
+
+.loader {
+    border: 16px solid #f3f3f3;
+    border-top: 16px solid #3498db;
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
