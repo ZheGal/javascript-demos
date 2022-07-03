@@ -1,0 +1,59 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(39, 39, 39);
+    color: rgb(230, 230, 230);
+}
+
+.container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.timer-block {
+    font-family: 'Wallpoet', cursive;
+    font-size: 64px;
+    text-align: center;
+    width: 100%;
+    padding: 2rem;
+    background-color: rgb(27 27 27);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.timer-block span:last-child {
+    font-size: 36px;
+    width: 100px;
+    margin-top: 1rem;
+}
+
+button {
+    font-family: 'Press Start 2P', cursive;
+    padding: 0.75rem 2.5rem;
+    margin: 1rem;
+    cursor: pointer;
+    background-color: #2e2ecd;
+    color: #fff;
+    border: none;
+}
+
+button:hover {
+    transition: .2s;
+    background-color: #3f3feb;
+}
+
+button:active {
+    transition: .2s;
+    background-color: #21217e;
+    padding-top: 0.5rem;
+    padding-bottom: 1.25rem;
+    transform: translate(0px, 0.25rem);
+}
